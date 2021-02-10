@@ -1,5 +1,4 @@
 from flask import Flask
-from routes import base
 
 from routes.base import base
 
