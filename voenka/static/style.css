@@ -120,6 +120,22 @@ a:focus {
     margin-right: auto;
 }
 
+#state_header{
+    margin-top: 2%;
+    margin-bottom: 1.5%;
+}
+
+#state_header h2{
+    text-align: center;
+}
+
+#paragraph {
+    text-align: center;
+    margin: auto;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */

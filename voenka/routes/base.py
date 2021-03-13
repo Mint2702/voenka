@@ -17,3 +17,8 @@ def about():
 @base.route("/money")
 def money():
     return render_template("money.html")
+
+
+@base.route("/instructions")
+def instructions():
+    return render_template("instructions.html")
