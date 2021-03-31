@@ -99,7 +99,7 @@ a:focus {
 
 #content {
     width: 100%;
-    min-height: 100vh;
+    min-height: 110vh;
     transition: all 0.3s;
 }
 
@@ -134,6 +134,18 @@ a:focus {
     margin: auto;
     padding-left: 6%;
     padding-right: 6%;
+}
+
+#paragraph ul{
+    text-align: left;
+}
+
+#paragraph p{
+    color: #2e2f31;
+}
+
+#paragraph a{
+    color: #b37a72;
 }
 
 /* ---------------------------------------------------
