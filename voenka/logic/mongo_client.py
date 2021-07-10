@@ -1,13 +1,22 @@
 from pymongo import MongoClient
 
-# Create the client
-client = MongoClient('localhost', 27017)
 
-# Connect to our database
-db = client['QRs']
+class MongoConnector:
+    def __init__(self) -> None:
+        self.get_collection()
 
-# Fetch our collection
-collection = db['qrs']
+    def get_collection(self):
+        # Create the client
+        client = MongoClient('localhost', 27017)
 
-res = collection.find_one({"name":"Мирталибов Даниил Игоревич"})
-print(res)
+        # Connect to our database
+        db = client['QRs']
+
+        # Fetch our collection
+        self.collection = db['qrs']
+
+    def add(self, data: dict) -> None:
+        return self.collection.insert_one(data).inserted_id
+
+    def find_document(self, id: str):
+        return self.collection.find_one({"_id":id})
