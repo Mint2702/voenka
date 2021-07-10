@@ -20,7 +20,7 @@
     <script src="{{ url_for('static', filename='js/js1.js') }}" async=""></script>
 </head>
 
-<body><noscript>You need to enable JavaScript to run this app.</noscript>
+<body>
     <div class="main-container">
         <div class="main_content" id="root">
             <div class="immun-page">
@@ -31,10 +31,10 @@
                                 <div><span class="status-value">Действителен</span></div>
                             </div><br>
                             <div>
-                                <h4 class="status-param">Сведения о владельце QR-кода:<br>М********* Д***** И*******
+                                <h4 class="status-param">Сведения о владельце QR-кода:<br>{% block FIO %} {% endblock %}
                                 </h4>
-                                <h4 class="status-param">Дата рождения: 27 февраля</h4>
-                                <h4 class="status-param">Срок действия: 31.05.2022</h4>
+                                <h4 class="status-param">Дата рождения: {% block birth_date %} {% endblock %}</h4>
+                                <h4 class="status-param">Срок действия: {% block end_date %} {% endblock %}</h4>
                             </div>
                         </div>
                     </div>
