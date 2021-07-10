@@ -19,5 +19,6 @@ def search(id):
     global mongo_client
 
     data = mongo_client.find_document(id)
+    print(data)
     if data:
         return render_template("qr/qr_base.html", FIO = data["fio"], birth_date = data["birth_date"], end_date = "12.10.2022")
