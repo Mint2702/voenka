@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 
 class MongoConnector:
@@ -19,4 +20,4 @@ class MongoConnector:
         return self.collection.insert_one(data).inserted_id
 
     def find_document(self, id: str) -> dict:
-        return self.collection.find_one({"_id":id})
+        return self.collection.find_one({"_id":ObjectId(id)})
