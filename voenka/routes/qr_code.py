@@ -14,7 +14,7 @@ def main():
     return render_template("qr/qr_index.html")
 
 @qr.route("/<id>")
-def search():
+def search(id):
     data = mongo.find_document(id)
     if data:
         return render_template("qr/qr_base.html", FIO = data["fio"], birth_date = data["birth_date"], end_date = "12.10.2022")
