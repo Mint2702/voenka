@@ -1,9 +1,10 @@
 from flask import Blueprint, render_template
-from .logic.mongo_client import MongoClient
+from .logic.mongo_client import MongoConnector
 
 
 qr = Blueprint("qr", __name__)
-mongo = MongoClient()
+mongo_client = MongoConnector()
+print(mongo_client)
 
 @qr.route("/me")
 def me():
@@ -15,6 +16,8 @@ def main():
 
 @qr.route("/<id>")
 def search(id):
-    data = mongo.find_document(id)
+    global mongo_client
+
+    data = mongo_client.find_document(id)
     if data:
         return render_template("qr/qr_base.html", FIO = data["fio"], birth_date = data["birth_date"], end_date = "12.10.2022")

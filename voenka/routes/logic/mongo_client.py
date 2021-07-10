@@ -18,5 +18,5 @@ class MongoConnector:
     def add(self, data: dict) -> None:
         return self.collection.insert_one(data).inserted_id
 
-    def find_document(self, id: str):
+    def find_document(self, id: str) -> dict:
         return self.collection.find_one({"_id":id})
