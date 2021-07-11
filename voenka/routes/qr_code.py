@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, request
 
 from .logic.mongo_client import MongoConnector
 from .logic.strings_convertation import fio_convert
+from .logic.qr_code_creator import create_qr
 
 
 qr = Blueprint("qr", __name__)
@@ -29,4 +30,5 @@ def form_worker():
     birth_date = request.form.get("birth_date")
     fio = request.form.get("fio")
     mongo_id = str(mongo_client.add({"fio":fio, "birth_date":birth_date}))
-    return search(mongo_id)
+    filename = create_qr(mongo_id)
+    return render_template("qr/qr_qr.html", filename=filename)
