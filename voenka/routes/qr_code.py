@@ -21,7 +21,6 @@ def search(id):
 
     data = mongo_client.find_document(id)
     if data:
-        print(data["fio"])
         fio = fio_convert(str(data["fio"]))
         return render_template("qr/qr_base.html", FIO = fio, birth_date = data["birth_date"], end_date = "12.10.2022")
 
