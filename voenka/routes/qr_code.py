@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, redirect, request
 
 from .logic.mongo_client import MongoConnector
+from .logic.strings_convertation import fio_convert
 
 
 qr = Blueprint("qr", __name__)
 mongo_client = MongoConnector()
-print(mongo_client)
 
 @qr.route("/me")
 def me():
@@ -21,7 +21,8 @@ def search(id):
 
     data = mongo_client.find_document(id)
     if data:
-        return render_template("qr/qr_base.html", FIO = data["fio"], birth_date = data["birth_date"], end_date = "12.10.2022")
+        fio = fio_convert(data["fio"])
+        return render_template("qr/qr_base.html", FIO = fio, birth_date = data["birth_date"], end_date = "12.10.2022")
 
 @qr.route('/', methods=['POST'])
 def form_worker():
