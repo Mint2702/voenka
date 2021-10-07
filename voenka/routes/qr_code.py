@@ -31,4 +31,7 @@ def form_worker():
     fio = request.form.get("fio")
     mongo_id = str(mongo_client.add({"fio":fio, "birth_date":birth_date}))
     filename = create_qr(mongo_id)
+    filename = f"../.{filename}"
+    #filename = filename[13:]
+    print(filename)
     return render_template("qr/qr_qr.html", filename=filename)
