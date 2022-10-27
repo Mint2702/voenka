@@ -1,2 +1,2 @@
 docker build -t voenka .
-docker run -d -p 56733:80 voenka 
+docker run -d -p 5000:80 voenka 
