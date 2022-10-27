@@ -20,17 +20,14 @@
 
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Здравия желаю!</h3>
+                <img width="100px" height="60pxpx" src="https://www.hse.ru/mirror/pubs/share/557719457">
             </div>
             <ul class="list-unstyled components">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('base.photoalbum') }}">Фотоальбом</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('base.about') }}">О создателе</a>
-                </li>
-                <li>
-                    <a href="#">Чат</a>
-                </li>
-                <li>
-                    <a href="#">Форум</a>
                 </li>
             </ul>
         </nav>
@@ -44,7 +41,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-                    <a class="navbar-brand" href="{{ url_for('base.hello') }}">Военка</a>
+                    <a class="navbar-brand" href="{{ url_for('base.hello') }}">Военпом</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -57,8 +54,7 @@
                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="{{ url_for('base.instructions') }}">Гайд к поступлению</a></li>
-                                    <li><a class="dropdown-item" href="#">Истории поступлений</a></li>
-                                    <li><a class="dropdown-item" href="#">Больше информации о поступлении</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('base.marketplace') }}">Маркетплейс</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown" id="out">
@@ -66,14 +62,14 @@
                   Поступившим
                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Советы</a></li>
-                                    <li><a class="dropdown-item" href="#">Цитаты</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('base.marketplace') }}">Маркетплейс</a></li>
+                                    <li><a class="dropdown-item" href="{{ url_for('base.annecdotes') }}">Цитаты и анекдоты</a></li>
                                 </ul>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item" id="donat">
-                                <a class="nav-link" href="{{ url_for('base.money') }}">Донат</a>
+                                <a class="nav-link" href="{{ url_for('base.money') }}">Поддержка автора</a>
                             </li>
                         </ul>
                     </div>
@@ -88,6 +84,23 @@
                     {% block content %} {% endblock %}
                 </div>
             </div>
+            <footer class="text-center text-white" style="background-color: #b0b7be;">
+                <div class="container p-4 pb-0">
+                    <section class="">
+                        <p class="d-flex justify-content-center align-items-center">
+                            <a href="https://t.me/danilmint">
+                                <button type="button" class="btn btn-outline-light btn-rounded">
+                                Напиши мне в Telegram!
+                                </button>
+                            </a>
+                        </p>
+                    </section>
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2022 Copyright:
+                    <a class="text-white" href="https://www.hse.ru/org/hse/ouk/mil/">Сайт ВУЦ ВШЭ</a>
+                </div>
+            </footer>
 
         </div>
 
@@ -105,7 +118,7 @@
                 });
             });
         </script>
-
+    </div>
 </body>
 
 </html>

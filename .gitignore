@@ -2,3 +2,4 @@ env/
 pycache
 *.cpython*
 *qrs
+*.pyc

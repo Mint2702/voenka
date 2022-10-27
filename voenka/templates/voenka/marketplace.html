@@ -1,0 +1,42 @@
+{% extends 'voenka/base.html' %}
+
+{% block title %}
+Маркетплейс
+{% endblock %}
+
+{% block content_title %}
+Маркетплейс
+{% endblock %}
+
+{% block content %} 
+<div class="marketplace">
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/uniform_example_0.webp') }}" alt="Ветровка" style="width:100%">
+        <h1>Ветровка</h1>
+        <p class="price">1000р</p>
+        <p>Размер 45</p>
+        <p><button>Купить</button></p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/uniform_example_1.webp') }}" alt="Костюм Армейский пиксель" style="width:100%">
+        <h1>Костюм</h1>
+        <p class="price">3400р</p>
+        <p>Размер 42</p>
+        <p><button>Купить</button></p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/uniform_example_2.webp') }}" alt="Штаны" style="width:100%">
+        <h1>Штаны</h1>
+        <p class="price">1200р</p>
+        <p>Размер 39</p>
+        <p><button>Купить</button></p>
+    </div>
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/uniform_example_3.webp') }}" alt="Футболка" style="width:100%">
+        <h1>Футболка</h1>
+        <p class="price">499р</p>
+        <p>Размер М</p>
+        <p><button>Купить</button></p>
+    </div>
+</div>
+{% endblock %}

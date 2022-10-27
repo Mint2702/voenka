@@ -8,16 +8,16 @@ class MongoConnector:
 
     def get_collection(self):
         # Create the client
-        client = MongoClient('localhost', 27017)
+        client = MongoClient("localhost", 27017)
 
         # Connect to our database
-        db = client['QRs']
+        db = client["QRs"]
 
         # Fetch our collection
-        self.collection = db['qrs']
+        self.collection = db["qrs"]
 
     def add(self, data: dict) -> None:
         return self.collection.insert_one(data).inserted_id
 
     def find_document(self, id: str) -> dict:
-        return self.collection.find_one({"_id":ObjectId(id)})
+        return self.collection.find_one({"_id": ObjectId(id)})

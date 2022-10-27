@@ -22,3 +22,18 @@ def money():
 @base.route("/instructions")
 def instructions():
     return render_template("voenka/instructions.html")
+
+
+@base.route("/photoalbum")
+def photoalbum():
+    return render_template("voenka/photoalbum.html")
+
+
+@base.route("/marketplace")
+def marketplace():
+    return render_template("voenka/marketplace.html")
+
+
+@base.route("/annecdotes")
+def annecdotes():
+    return render_template("voenka/annecdotes.html")
